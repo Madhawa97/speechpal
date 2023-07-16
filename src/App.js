@@ -60,6 +60,7 @@ const Recorder = () => {
       <Button variant="success" onClick={handleSubmit} disabled={!blob}>
         Submit
       </Button>
+      <Alert variant="info">{transcript || "No transcript yet."}</Alert>
     </div>
   );
 };
