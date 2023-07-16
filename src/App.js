@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Button, Alert } from "react-bootstrap";
 
+
 import { ReactMic } from 'react-mic';
 
 import axios from "axios";
@@ -47,22 +48,24 @@ const Recorder = () => {
     <div>
       <ReactMic
         record={recording}
-        className="sound-wave"
+        className="sound-wave spectrum"
         onStop={handleStop}
-        strokeColor="#000000"
-        backgroundColor="#FF4081"
+        strokeColor="#EAAC8B"
+        backgroundColor="#355070"
         mimeType="audio/webm"
       />
-      <Button variant="primary" onClick={handleStart} disabled={recording}>
-        Start
-      </Button>
-      <Button variant="secondary" onClick={handleStop} disabled={!recording}>
-        Stop
-      </Button>
-      <Button variant="success" onClick={handleSubmit} disabled={!blob}>
-        Submit
-      </Button>
-      <Alert variant="info">{transcript || "No transcript yet."}</Alert>
+      <div className="d-flex justify-content-end gap-2 controls">
+        <Button className="record-button-style button-style" onClick={handleStart} disabled={recording}>
+          Start Recording
+        </Button>
+        <Button className="stop-button-style button-style" onClick={handleStop} disabled={!recording}>
+          Stop
+        </Button>
+        <Button className="submit-button-style button-style" onClick={handleSubmit} disabled={!blob}>
+          Analyze
+        </Button>
+      </div>
+      <Alert className="mt-4" variant="info">{transcript || "No transcript yet."}</Alert>
     </div>
   );
 };
@@ -70,7 +73,7 @@ const Recorder = () => {
 const App = () => {
   return (
     <Container className="mt-4">
-      <h1>Speech to Text App</h1>
+      <h1 style={{color: '#FFFFFF'}}>SpeechPal</h1>
       <Recorder />
     </Container>
   );

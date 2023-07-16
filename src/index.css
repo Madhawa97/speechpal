@@ -11,3 +11,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.button-style {
+  color: #ffffff !important;
+  border: none !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.stop-button-style {
+  background-color: #B56576 !important;
+}
+
+.stop-button-style:hover {
+  background-color: #df7e93 !important;
+}
+
+.record-button-style {
+  background-color: #E56B6F !important;
+}
+
+.record-button-style:hover {
+  background-color: #ff8387 !important;
+}
+
+.submit-button-style {
+  background-color: #6D597A !important;
+}
+
+.submit-button-style:hover {
+  background-color: #886f99 !important;
+}
+
+.spectrum {
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 15vh;
+}
+
+.controls {
+  margin-top: 50vh;
+}
