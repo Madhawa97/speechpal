@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Container, Button, Alert } from "react-bootstrap";
 
-import { ReactMicPlus } from "react-mic-plus";
+import { ReactMic } from 'react-mic';
+
 import axios from "axios";
 
 const nodeAppUrl = "http://localhost:3000/postAudio";
@@ -44,12 +45,13 @@ const Recorder = () => {
 
   return (
     <div>
-      <ReactMicPlus
+      <ReactMic
         record={recording}
         className="sound-wave"
         onStop={handleStop}
         strokeColor="#000000"
         backgroundColor="#FF4081"
+        mimeType="audio/webm"
       />
       <Button variant="primary" onClick={handleStart} disabled={recording}>
         Start
